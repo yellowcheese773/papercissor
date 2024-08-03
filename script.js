@@ -35,6 +35,8 @@ function playRound() {
 
     //ich muss noch einbauen, das wenn beide dasselbe ergebnis haben, das keiner einen punkt bekommt
 
+
+
     if (humanAnswer == "scissor" && computerChoice == "paper") {
         humanScore += 1
         console.log("human has won")
@@ -53,10 +55,29 @@ function playRound() {
 
     }
 
-    else {
+    if (humanAnswer == "paper" && computerChoice == "scissor") {
         computerScore += 1
         console.log("computer has won")
+
     }
+
+    else if (humanAnswer == "scissor" && computerChoice == "rock") {
+        computerScore += 1
+        console.log("computer has won")
+
+    }
+
+    else if (humanAnswer == "rock" && computerChoice == "paper") {
+        computerScore += 1
+        console.log("computer has won")
+
+    }
+
+    else if (humanAnswer == computerChoice) {
+        console.log("nobody won")
+    }
+
+
 
     console.log("computer had: " + computerChoice)
 
@@ -73,12 +94,12 @@ function playGame() {
     while (computerScore != 5 || humanScore != 5) {
 
         if (computerScore == 5) {
-            alert("Computer has won")
+            alert("COMPUTER has won")
             return
         }
 
         else if (humanScore == 5) {
-            alert("human has won")
+            alert("HUMAN has won")
             return
         }
 
